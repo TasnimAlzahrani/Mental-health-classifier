@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>Mental Health classifier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(90deg, rgba(7, 0, 133, 1) 0%, rgba(54, 54, 172, 1) 28%, rgba(0, 212, 255, 100) 100%);
+      color: #000C54;
+      font-family: 'Vollkorn', serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 5%;
+      margin-top: 2%;
+    }
+
+    .text {
+      border: none;
+      overflow: auto;
+      outline: none;
+      display: block;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      resize: none;
+      padding: 5vw;
+      margin-top: 1vw;
+      background-color: rgba(255, 255, 255, 0.3799999952316284);
+      backdrop-filter: blur(10px);
+      width: 60vw;
+      height: 25vw;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      margin: auto;
+      color: black;
+      font-family: 'Vollkorn', serif;
+
+    }
+
+    textarea::placeholder {
+      color: rgb(0, 0, 0);
+    }
+
+    .feedback {
+      padding-top: 5vw;
+      font-family: Poller One;
+      color: rgba(0, 0, 0, 1);
+      width: 296px;
+      height: 94px;
+      text-align: center;
+      font-size: 2vw;
+      letter-spacing: 0;
+    }
+
+    .submit {
+      justify-content: center;
+      align-items: center;
+      font-family: Poller One;
+      color: #ffffff;
+      font-size: 1.4vw;
+      background: linear-gradient(90deg, rgb(45, 45, 45) 0%, rgb(24, 24, 41) 56%, rgb(28, 28, 28) 100%);
+      width: 12vw;
+      height: 3.3vw;
+      border: none;
+      border-radius: 0.8vw;
+      display: block;
+      margin-top: 2%;
+      font-family: 'Vollkorn', serif;
+
+    }
+
+    .submit:hover {
+      cursor: pointer;
+    }
+
+    .results {
+      text-align: center;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      margin-left: 3%;
+      margin-top: 0%;
+      font-size: 1.3vw;
+      font-weight: bold;
+      width: 50%;
+      backdrop-filter: blur(10px);
+
+    }
+  </style>
+</head>
+<body>
+  <div class="outer-countainer">
+    <form action="{{ url_for('predict') }}" method="POST">
+      <textarea class="text" name="message" placeholder="Enter Your Message Here... "></textarea>
+
+      <input class="submit" type="submit" value="Submit" />
+    </form>
+  </div>
+</body>
+</html>
