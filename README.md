@@ -11,10 +11,16 @@ a mental health classifier that can analyze user-generated text and determine th
 # Prerequisites
 Before running the NLP Flask web application, ensure that you have the following prerequisites installed:
 
+First, create an isolated environment to avoid conflicts between different versions of packages and provide a clean and predictable development environment:
+```
+command py -m venv nlp_env
+
+```
 * Python 3
 * Flask (Install using pip install flask)
 * Keras (Install using pip install keras==2.12.0)
 * Tensorflow (Install using pip install tensorflow==2.12.0)
+
 
 # Getting Started
 1. Clone this repository or download the source code files.
